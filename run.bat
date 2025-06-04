@@ -1,0 +1,1 @@
+python --html=report.html -m current
