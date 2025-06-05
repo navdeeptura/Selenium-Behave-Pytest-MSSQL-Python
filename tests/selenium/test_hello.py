@@ -5,14 +5,17 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 def slow_action(delay=1.0):
     sleep(delay)
 
 
-@pytest.mark.sele
+@pytest.mark.selenium
+@pytest.mark.skip(reason="website down")
 def test_launch_website():
-    service = Service(executable_path="drivers/chromedriver.exe")
+    service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
     driver.implicitly_wait(5)
 

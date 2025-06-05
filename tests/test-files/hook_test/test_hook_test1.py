@@ -7,7 +7,6 @@ def test_1_print():
     """This is the sample test, always start with or ends with test"""
     logging.info("executing test_1_print")
 
-@pytest.mark.current
 class TestSampleClass:
     """This is the sample class, Class Name should always start with Test"""
     value = 0

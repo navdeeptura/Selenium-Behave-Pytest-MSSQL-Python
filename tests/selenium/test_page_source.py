@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 
+@pytest.mark.selenium
 def test_launch_browser(driver):
     driver.get("https://demoqa.com/checkbox")
     print(driver.title)

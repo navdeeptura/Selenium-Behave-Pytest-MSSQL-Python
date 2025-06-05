@@ -1,9 +1,6 @@
-from pickle import FALSE
-
 import pytest
-from sqlalchemy import True_, false
 
-from scripts.algoritms.PalindromeCheck import PalindromeCheck
+from algorithms.PalindromeCheck import PalindromeCheck
 
 
 class TestPalindrome:

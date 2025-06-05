@@ -1,15 +1,16 @@
 import logging
 import sys
 import os
+import yaml
+from pathlib import Path
 
 import pytest
-from selenium import webdriver
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
-from utils.browser_manager import get_driver
+from scripts.utils.browser_manager import get_driver
 
 def pytest_addoption(parser):
     parser.addoption("--browser",
@@ -45,4 +46,12 @@ def configure_logging():
     setup_logger(log_level, log_path)
     logging.info("Logger started in root-conftest.py file")
     logging.info("Logger initiated for the Automation")
+
+
+@pytest.fixture(scope="session")
+def textbox_test_data():
+    data_file = Path(__file__).parent.parent / "test_data" / "user_information.yaml"
+    with open(data_file, "r") as f:
+        data = yaml.safe_load(f)
+    return data["test_users"]
 

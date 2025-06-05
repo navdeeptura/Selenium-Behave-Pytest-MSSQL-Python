@@ -1,0 +1,7 @@
+test_users:
+  - full_name: "Navdeep T"
+    email: "hdlpids@gmail.com"
+    address: "35 test Drive"
+  - full_name: "Raman T"
+    email: "ramanu4455@gmail.com"
+    address: "35 raman Drive"

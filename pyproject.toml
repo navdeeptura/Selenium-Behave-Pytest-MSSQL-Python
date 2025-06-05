@@ -1,0 +1,7 @@
+# pyproject.toml
+[tool.pytest.ini_options]
+markers = [
+    "smoke: mark test as smoke",
+    "current: mark test as current",
+    "selenium: mark test as selenium",
+]
