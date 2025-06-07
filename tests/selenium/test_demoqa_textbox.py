@@ -27,13 +27,19 @@ class TestDemoQATextBox:
         time.sleep(5)
         assert "DEMOQA" in driver2.title
 
-    @pytest.mark.current
     @pytest.mark.selenium
-    def test_open_url_with_conftest_browser(self, driver: WebDriver, textbox_test_data):
-        user = textbox_test_data[0]
-        driver.get("https://demoqa.com/text-box")
+    @pytest.mark.current
+    def test_open_url_with_conftest_browser(self,
+                                            driver: WebDriver,
+                                            test_users_data,
+                                            site_details):
+        user = test_users_data["test_users"][0]
+        text_box_info = site_details["text_box_page"][0]
 
-        assert "DEMOQA" in driver.title
+        print (text_box_info["url"])
+        driver.get(text_box_info["url"])
+
+        assert text_box_info["driver.title"] == driver.title
 
         text_box_page = DemoQATextBox(driver)
 
@@ -51,3 +57,14 @@ class TestDemoQATextBox:
         )
         driver.get(self.url)
         driver.quit()
+
+
+    def test_print_user_data(self, test_users_data):
+        print ("\n------------------------------------- \n")
+        print(test_users_data)
+        print("\n------------------------------------- \n")
+        print(test_users_data["test_users"])
+        print("\n------------------------------------- \n")
+        print(test_users_data["test_users"][0])
+        print("\n------------------------------------- \n")
+        print(test_users_data["test_users"][0]["full_name"])

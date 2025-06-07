@@ -1,6 +1,6 @@
 import pytest
 
-from algorithms.ReverseString import ReverseString
+from coding_problems.ReverseString import ReverseString
 
 class TestReverseString:
 

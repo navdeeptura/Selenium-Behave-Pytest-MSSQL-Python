@@ -1,6 +1,6 @@
 import pytest
 
-from algorithms.PalindromeCheck import PalindromeCheck
+from coding_problems.PalindromeCheck import PalindromeCheck
 
 
 class TestPalindrome:

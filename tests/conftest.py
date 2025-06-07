@@ -49,9 +49,17 @@ def configure_logging():
 
 
 @pytest.fixture(scope="session")
-def textbox_test_data():
-    data_file = Path(__file__).parent.parent / "test_data" / "user_information.yaml"
+def test_users_data():
+    data_file = Path(__file__).parent.parent / "test_data" / "test_box_data.yaml"
     with open(data_file, "r") as f:
         data = yaml.safe_load(f)
-    return data["test_users"]
+    return data
+
+@pytest.fixture(scope="session")
+def site_details():
+    data_file = Path(__file__).parent.parent / "test_data" / "site_details.yaml"
+    with open(data_file, "r") as f:
+        data = yaml.safe_load(f)
+    return data
+
 

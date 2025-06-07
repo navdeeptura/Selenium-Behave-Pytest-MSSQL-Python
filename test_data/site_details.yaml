@@ -1,0 +1,3 @@
+text_box_page:
+  - url: "https://demoqa.com/text-box"
+    driver.title: "DEMOQA"
